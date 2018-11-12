@@ -1,0 +1,172 @@
+* {
+   padding: 0;
+   margin: 0;
+}
+
+body,
+html {
+   width: 100%;
+   height: 100%;
+}
+
+body {
+   min-width: 300px;
+}
+
+:root {
+   font: 30px 'Rajdhani', monospace;
+}
+
+a {
+   cursor: pointer;
+}
+
+/* SETUP --------------------------------------------------
+         -------------------------------------------------- */
+
+#wrapper {
+   display: grid;
+   grid-template-columns: 1fr 450px 1fr;
+   grid-template-rows: 1fr 250px 450px 1fr;
+
+   width: 100%;
+   height: 100%;
+}
+
+#top {
+   grid-column: 2/3;
+   grid-row: 2/3;
+
+   /* +5px top for box-shadow */
+   padding: 35px 60px 30px 60px;
+
+   border-radius: 10px 10px 0 0;
+   background-color: #60D6D4;
+}
+
+#bottom {
+   grid-column: 2/3;
+   grid-row: 3/4;
+
+   border-radius: 0 0 10px 10px;
+   background-color: #60D6D4;
+   box-shadow: 0 5px #149364;
+}
+
+#basic-op {
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   grid-template-rows: repeat(5, 1fr);
+   grid-row-gap: 20px;
+   grid-column-gap: 20px;
+
+   padding: 35px 10px 35px 40px;
+}
+
+/* buttons */
+
+a {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   height: 60px;
+   margin: auto;
+
+   background-color: #0BE9ED;
+}
+
+#more,
+#back {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   float: right;
+   width: 20px;
+   height: 100%;
+
+   background-color: #60D6D4;
+}
+
+
+/* STYLE --------------------------------------------------
+         -------------------------------------------------- */
+
+/* screen */
+
+#screen {
+   display: flex;
+   justify-content: flex-end;
+   align-items: center;
+   overflow: hidden;
+   white-space: nowrap;
+
+   height: 100%;
+   border-left: 8px solid transparent;
+   border-right: 9px solid transparent;
+
+   background-color: #05C17C;
+   box-shadow: 0 -5px .5px #149364;
+
+   letter-spacing: -0.3px;
+   font: 2.4rem 'Quantico', 'Inconsolata', monospace!important;
+}
+
+#text {
+   display: block;
+}
+
+/* buttons */
+
+#navmore,
+#navback {
+   width: 50px;
+   height: 100%;
+
+   border-radius: 25px/ 5px;
+   box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+#navback {
+   display: none;
+}
+
+a:not(#equals):not(#navmore):not(#navback) {
+   width: 60px;
+
+   border-radius: 50%;
+}
+
+#equals {
+   grid-column: 3/5;
+
+   width: 155px;
+
+   border-radius: 30px;
+}
+
+/* ANIMATIONS ---------------------------------------------
+              --------------------------------------------- */
+
+a {
+   position: relative;
+   top: 0;
+
+   box-shadow: 0px 5px rgba(0, 0, 0, 0.2);
+   color: #888;
+
+   transition: all 0.2s ease;
+}
+
+a:hover {
+   box-shadow: 0px 5px #6b54d3;
+   background: #9c89f6;
+   color: white;
+}
+
+a:active {
+   top: 4px;
+
+   box-shadow: 0px 0px #6b54d3;
+}
