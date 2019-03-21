@@ -27,10 +27,18 @@ a {
 #wrapper {
    display: grid;
    grid-template-columns: 1fr 450px 1fr;
-   grid-template-rows: 1fr 250px 450px 1fr;
+   grid-template-rows: 1fr 250px 450px .3fr;
 
    width: 100%;
    height: 100%;
+}
+
+#empty {
+   grid-column: 2/3;
+
+   display: flex;
+   align-items: center;
+   justify-content: center;
 }
 
 #top {
@@ -50,7 +58,7 @@ a {
 
    border-radius: 0 0 10px 10px;
    background-color: #60D6D4;
-   box-shadow: 0 5px #149364;
+   box-shadow: 0 5px #4c7e6b;
 }
 
 #basic-op {
@@ -97,13 +105,12 @@ a {
 
 #screen {
    display: flex;
-   justify-content: flex-end;
    align-items: center;
    overflow: hidden;
-   white-space: nowrap;
+   white-space: nowrap; /* do not wrap to the next line */
 
    height: 100%;
-   border-left: 8px solid transparent;
+   border-left: 8px solid transparent; /* do not go onto the paddign */
    border-right: 9px solid transparent;
 
    background-color: #05C17C;
@@ -114,7 +121,9 @@ a {
 }
 
 #text {
-   display: block;
+   display: flex;
+   justify-content: flex-end;
+   width: 100%;
 }
 
 /* buttons */
@@ -142,7 +151,6 @@ a:not(#equals):not(#navmore):not(#navback) {
    grid-column: 3/5;
 
    width: 155px;
-
    border-radius: 30px;
 }
 
